@@ -26,12 +26,13 @@ body {
   margin-bottom: 0px;
   font-size: 3.5em; 
   text-align: left;
-  margin-left: 15px;
+  margin-left: 0px;
   align-items: center;
+  margin-bottom: 30px;
 }
 .main-title-container{
   display: flex;
-  align-items: center; /* Align items on the baseline */
+  align-items: center;
 }
 
 .nav-logo {
@@ -43,16 +44,18 @@ body {
 .slogan {
   font-size: 1.5em; 
   text-align: left;
+  margin-left: 40px;
+  margin-top:2px;
 }
 
 .form-container {
   max-width: 800px;
   margin: 0 auto;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8); /* Background color with 80% opacity */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight blurred shadow */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Add padding for content spacing */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  padding: 20px; 
 }
 
 .nav-bar{
@@ -128,4 +131,28 @@ body {
 
 .title {
   color: var(--title-color);
+}
+
+.progress{
+  max-width: 800px;
+  margin: 0 auto;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  padding: 20px; 
+}
+
+.progress-title{
+  margin-bottom: 20px;
+}
+
+.resource-map-container{
+  max-width: 800px;
+  margin: 0 auto;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8); /* Background color with 80% opacity */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight blurred shadow */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; 
 }

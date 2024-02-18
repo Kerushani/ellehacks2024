@@ -56,10 +56,13 @@ function DailyCheck() {
           margin="normal"
         />
         <Typography variant="h6">Today I...</Typography>
-        <FormControlLabel control={<Checkbox />} label="Talked to a friend" />
-        <FormControlLabel control={<Checkbox />} label="Had time to myself" />
-        {/* Add more checkboxes for other options */}
-        <Button variant="contained" type="submit">
+        <div>
+            <FormControlLabel control={<Checkbox />} label="Talked to a friend" />
+            <FormControlLabel control={<Checkbox />} label="Had time to myself" />
+            <FormControlLabel control={<Checkbox />} label="Spent time with pet" />
+            <FormControlLabel control={<Checkbox />} label="Read a boox" />
+        </div>
+        <Button className="form-button" variant="contained" type="submit">
           Submit
         </Button>
       </form>

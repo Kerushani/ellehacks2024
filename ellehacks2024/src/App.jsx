@@ -27,6 +27,7 @@ import LandingPage from "./pages/LandingPage";
 import TalkToOlly from "./pages/TalkToOlly";
 import DailyCheckIn from "./pages/DailyCheck";
 import Progress from "./pages/Progress";
+import ResourceMap from "./pages/ResourceMap";
 
 
 function App() {
@@ -174,7 +175,7 @@ function App() {
                     textDecoration: "none",
                   }}
                 >
-                  Talk To Olly
+                  Chat With Ollie
                 </Typography>
                 <Typography
                   variant="h6"

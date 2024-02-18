@@ -1,10 +1,14 @@
-function ResourceMap(){
-    return (
-        <div>
-        <h1>Resource Map</h1>
-        <p>Resource Map content</p>
-        </div>
-    );
+import Typography from "@mui/material/Typography";
+
+function ResourceMap() {
+  return (
+    <div className="resource-map-container">
+      <Typography variant="h4" style={{ fontFamily: "Roboto" }}>
+        Resource Map
+      </Typography>
+      <p>Under construction! Make sure to check back soon!</p>
+    </div>
+  );
 }
 
 export default ResourceMap;

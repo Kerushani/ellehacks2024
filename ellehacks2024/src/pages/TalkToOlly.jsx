@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../App.css';
 import group2 from "../assets/group2.svg";
 import user from "../assets/user.png";
+import Typography from "@mui/material/Typography";
 
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message as ChatUIMessage, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
@@ -90,8 +91,8 @@ function TalkToOlly() {
       return (
         <div className="App">
           <div className='chatbox-container'>
-            <h1 style={{ fontFamily: "Roboto", color: "Black", marginTop: "20px", fontSize: "2.5em", alignItems: "start"}}>Chat With Ollie</h1> {/* Move the title down */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: "700px", width: "100%", marginTop: "20px" }}> {/* Adjust the margin top to move down the chatbox */}
+            <Typography variant="h4" style={{ fontFamily: 'Roboto' }}>Chat With Ollie</Typography> 
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: "700px", width: "100%", marginTop: "20px" }}>
               <div style={{ position: "relative", height: "800px", width: "100%" }}>
                 <MainContainer>
                   <ChatContainer>
