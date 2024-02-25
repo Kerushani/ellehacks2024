@@ -1,17 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/group2.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open Arms</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html> 
+<html lang="en"›
+
+<head> 
+    <meta charset= "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"›
+    <title>OpenArms‹/title>
+
+    <!--- css style -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="  crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+   <!-- Marker icon image -->
+   <!-- <img src="./img/red_marker.png" alt="Red Pin"> -->
+
+
+    <style> 
+    #map {
+        width: 100%;
+        height: 100vh;
+    }
+    </style>
+
+
+</head>
+
+
+
+ <body>
+    <div id="map"></div>div</div>
+
+ </body>
+
+
+
+ </html> 
+ <!--javascript-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" ></script>
+
+<script>
+    //map initaliziation
+    var map = L.map('map').setView([43.6532, -79.3832], 13);
+
+    //osm layer
+    var osm =  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'})
+    osm.addTo(map);
+    
+    googleStreets = L.tileLayer('http: //{s} -google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+
+
+    var hospital = L.icon ({ 
+    iconUrl: 'img/red_marker.png', 
+    iconSize: [40, 40,] 
+    });
+
+    var shelters = L.icon ({ 
+    iconUrl: 'img/blue_marker.png', 
+    iconSize: [40, 40,]
+     });
+
+    var food = L.icon ({ 
+    iconUrl: 'img/green_marker.png', 
+    iconSize: [40, 40,] 
+    });
+
+    var harm = L.icon ({ 
+    iconUrl: 'img/orange_marker.png', 
+    iconSize: [40, 40,] 
+    });
+
+    var nal = L.icon ({ 
+    iconUrl: 'img/black_marker.png', 
+    iconSize: [40, 40,] 
+    });
+    
+    
+
+    
+    //curerent location
+    if(!navigator.geolocation) {
+        console.log("Your browser doesn't support geolocation feature!")
+    } else {
+        setInterval(() => {
+            navigator.geolocation.getCurrentPosition(getPosition)
+        }, 5000);
+    }
+
+    //get current position
+    var marker;
+    function getPosition(position){
+        // console.log(position)
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+        var accuracy = position.coords.accuracy
+
+        if(marker) {
+            map.removeLayer(marker)
+        }
+
+     
+        marker = L.marker([lat, long], {draggable: true}).addTo(map)
+        .bindPopup('You are here.<br>')
+        //.openPopup();
+        
+    }
+
+    
+
+    //hospitals
+    L.marker([43.6537, -79.3778],  { icon: hospital}).addTo(map)
+    .bindPopup("<h3> St. Michales Hospital <h3> <p> <img src='./img/michaels.jpg' style='max-width: 150px;' />")
+    .openPopup();
+
+    L.marker([43.6590, -79.3884], { icon: hospital}).addTo(map)
+    .bindPopup("<h3>Toronto General Hospital<h3> <p> <img src='./img/torontog.jpeg' style='max-width: 200px;' />")
+    .openPopup();
+
+    L.marker([43.6534, -79.4055], { icon: hospital}).addTo(map)
+    .bindPopup("<h3> Toronto Western Hospital <h3> <p> <img src='./img/western.png' style='max-width: 150px;' />")
+    .openPopup();
+
+    //warm buildings
+    L.marker([43.66908344222389, -79.43932410742754], { icon: shelters}).addTo(map)
+    .bindPopup("<h3> Christie Ossington Neighbourhood Centre <h3> <p> <img src='./img/christie.jpeg' style='max-width: 200px;' />")
+    .openPopup();
+
+    L.marker([43.66182134011321, -79.4284311889657], { icon: shelters}).addTo(map)
+    .bindPopup("<h3> Sistering <h3> <p> Women's Shelter <p> <p> <img src='./img/sister.jpeg' style='max-width: 140px;' />")
+    .openPopup();
+
+    //food banks
+    L.marker([43.657388346909165, -79.40511801266919], { icon: food}).addTo(map)
+    .bindPopup("<h3> Fort York Food Bank <h3> <p> <img src='./img/fortyork.jpeg' style='max-width: 150px;' />")
+    .openPopup();
+
+    L.marker([43.66039538314432, -79.40093391548403], { icon: food}).addTo(map)
+    .bindPopup("<h3> Scott Mission <h3>  <p> Food Banks <p> <img src='./img/scottmission.jpeg' style='max-width: 100px;' />")
+    .openPopup();
+
+    L.marker([43.66321686661553, -79.37248508759644], { icon: food}).addTo(map)
+    .bindPopup("<h3> Allan Garden Food Bank <h3>  <p> <img src='./img/allan.jpeg' style='max-width: 150px;' />")
+    .openPopup();
+
+    //shelters
+
+    //centres for women or sexual assualt survivors
+
+    //harm reduction
+    L.marker([43.650025147869314, -79.36935686246386], { icon: harm}).addTo(map)
+    .bindPopup(" <h3> 2 Spirited People of the 1st Nation<h3> <br> Harm Reduction <p> <img src='./img/2spirit.webp' style='max-width: 150px;' />")
+    .openPopup();
+
+    L.marker([43.65678446151753, -79.37936687410448], { icon: harm}).addTo(map)
+    .bindPopup("<h3> The Works <h3> <p> Harm Reduction <p> <img src='./img/theworks.jpeg' style='max-width: 140px;' />")
+    .openPopup();
+
+
+    //places to get nalaxone!!!
+    L.marker([43.66120139541609, -79.33900421087823], { icon: nal}).addTo(map)
+    .bindPopup("<h3> South Riverdale Health Centre <h3> <p> Nalaxone kits <p> <p> <img src='./img/riverdale.jpeg' style='max-width: 200px;' />")
+    .openPopup();
+
+
+</script>
