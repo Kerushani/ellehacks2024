@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message as ChatUIMessage, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = "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";
 const systemMessage = {
   role: "system", 
   content: "Explain like you are a mental health therapist and the person you are talking to is a homeless person in need of support"
