@@ -60,7 +60,7 @@ function DailyCheck() {
             <FormControlLabel control={<Checkbox />} label="Talked to a friend" />
             <FormControlLabel control={<Checkbox />} label="Had time to myself" />
             <FormControlLabel control={<Checkbox />} label="Spent time with pet" />
-            <FormControlLabel control={<Checkbox />} label="Read a book" />
+            <FormControlLabel control={<Checkbox />} label="Read a boox" />
         </div>
         <Button className="form-button" variant="contained" type="submit">
           Submit

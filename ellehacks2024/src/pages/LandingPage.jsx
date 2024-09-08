@@ -6,7 +6,7 @@ function LandingPage() {
       <div className="title-container">
         <div className="main-title-container">
           <img src={group2} alt="Logo" className="logo" />
-          <p className="main-title">OpenArms</p>
+          <p className="main-title">Open Arms</p>
         </div>
         <p className="slogan">Your companion in healing.</p>
       </div>
